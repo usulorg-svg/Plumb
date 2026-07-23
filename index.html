@@ -17,16 +17,22 @@ h1 {
 }
 
 h2 {
-    color: #444;
+    color: green;
 }
-
-.
 
 button {
     background-color: green;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 10px;
     border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.service {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    margin:20px;
     border-radius: 20px;
     font-weight: bold;
 }
@@ -36,28 +42,128 @@ footer {
     background-color: #444;
     color: white;
 }
+        /* Navbar container style */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            background-color: green;
+            padding: 1rem 2rem;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation menu links layout */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #04AA6D;
+        }
+       /* put Hamburger button firt */
+        /* Hamburger button layout (hidden by default on desktop) */
+        .toggle-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+          border: none;
+        }
+
+        .toggle-btn .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Mobile Styles */
+        @media (max-width: 768px) {
+            .toggle-btn {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            .nav-links {
+                display: none; /* Hide standard links */
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                padding: 1rem;
+                text-align: center;
+                gap: 15px;
+            }
+
+            /* JavaScript toggles this class to show/hide the menu */
+            .nav-links.active {
+                display: flex;
+            }
+        }
+                * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', Impact, sans-serif;
 </style>
 
 </head>
 
 <body>
+    <!-- Navigation Bar Structure -->
+    <nav class="navbar">
+        
+        <!-- Hamburger Icon Button -->
+        <button class="toggle-btn" id="navbar-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="services.html">Services</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+        <!-- Menu Links -->
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+                   <div class="logo">Gabbi Plumbing & Consult</div>
+    </nav>
 
-<h1>GABBI PLUMBING AND CONSULT</h1>
+    <!-- Toggle Action Script -->
+    <script>
+        const toggleButton = document.getElementById('navbar-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Listen for user click to toggle visibility
+        toggleButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 
 <h2>Plumbing Made Easy</h2>
 
-<p>Get your plumbing issues settled today.</p>
-
-<img src="plumber.jpg" alt="Plumbing Services" width="300">
-
+<p>Get your plumbing issues settled today.
+</p>
+<div class="ourservice">
 <h2>Our Services</h2>
+</div>
   <div class="service">
     <h3>House Piping</h3>
     <p>Professional piping installation for homes and estates.</p>
