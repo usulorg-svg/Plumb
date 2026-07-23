@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>contact</title>
+
+<style>
+body {
+    background-color: #f5f5f5;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: green;
+}
+
+h2 {
+    color: #444;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.contact {
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    margin:20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #444;
+    color: white;
+}
+
+        /* Navbar container style */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            background-color: #333;
+            padding: 1rem 2rem;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation menu links layout */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #04AA6D;
+        }
+       /* put Hamburger button firt */
+        /* Hamburger button layout (hidden by default on desktop) */
+        .toggle-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+          border: none;
+        }
+
+        .toggle-btn .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Mobile Styles */
+        @media (max-width: 768px) {
+            .toggle-btn {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            .nav-links {
+                display: none; /* Hide standard links */
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                padding: 1rem;
+                text-align: center;
+                gap: 15px;
+            }
+
+            /* JavaScript toggles this class to show/hide the menu */
+            .nav-links.active {
+                display: flex;
+            }
+        }
+                * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', Impact, sans-serif;
+ 
+
+input, textarea {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 120px;
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Navigation Bar Structure -->
+    <nav class="navbar">
+        
+        <!-- Hamburger Icon Button -->
+        <button class="toggle-btn" id="navbar-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Menu Links -->
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+                   <div class="logo">Gabbi Plumbing & Consult</div>
+    </nav>
+
+    <!-- Toggle Action Script -->
+    <script>
+        const toggleButton = document.getElementById('navbar-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Listen for user click to toggle visibility
+        toggleButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+<p>plumbing made easy</p>
+<button onclick="showMessage()">Get Free Quote</button>
+  <div class="contact">
+    <h3>contact</h3>
+    <p>Telephone : 09033085467
+<a href="tel:09033085467">
+    <button>CALL NOW</button>
+</a></p>
+    <p>email: usulorg@gmail.com.
+<a href="mailto:usulorg@gmail.com">
+    <button>Send Message</button></a>
+</p>
+    <p> 9, nnobi road, adazi ani</p>
+</div>
+<h3>Request a Quote</h3>
+
+<form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name"><br><br>
+
+    <input type="email" placeholder="Your Email"><br><br>
+
+    <textarea placeholder="Describe your plumbing issue"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+<footer>
+    <p>&copy; 2026 Gabbi Plumbing & Consult. All Rights Reserved.</p>
+</footer>
+<script>
+function showMessage() {
+    alert("Thank you for choosing Gabbi Plumbing & Consult!");
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you! Your quote request has been received.");
+}
+</script>
+</body>
+</html>
+
+
